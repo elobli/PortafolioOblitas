@@ -24,7 +24,7 @@ function Projects() {
     {
       id: 3,
       name: "Portafolio Propio",
-      description: "Portafolio personal para muestra de mis habilidades.",
+      description: "Portafolio personal para muestra de mis habilidades con las herramientas de:.",
       technologies: ["HTML", "CSS", "JavaScript", "React"],
       link: "https://portafolio-oblitas.vercel.app/",
       image: "https://cdn-icons-png.flaticon.com/512/3616/3616770.png"
