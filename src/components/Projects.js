@@ -26,7 +26,7 @@ function Projects() {
       name: "Portafolio Propio",
       description: "Un proyecto simple para demostrar habilidades React.",
       technologies: ["HTML", "CSS", "JavaScript", "React"],
-      link: "https://osdav-bolivia.com/",
+      link: "https://portafolio-oblitas.vercel.app/projects",
       image: "https://cdn-icons-png.flaticon.com/512/3616/3616770.png"
     },
     {
