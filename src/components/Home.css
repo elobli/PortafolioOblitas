@@ -1,0 +1,56 @@
+/* Home.css */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+/* Resto de tus estilos */
+
+.home-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #e2adad;
+    background-image: url('/src/components/image/Fondo.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+ body {
+  font-family: 'Montserrat', sans-serif;
+ } 
+
+ .profile-image {
+  width: 300px; /* Ajusta el tamaño según necesites */
+  height: 300px;
+  border-radius: 50%; /* Crea una imagen circular */
+  margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+
+  h1 {
+    font-size: 3rem; /* Ajusta el tamaño de la fuente según necesites */
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  @media (max-width: 768px) {
+    .profile-image {
+      width: 250px;
+      height: 250px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  

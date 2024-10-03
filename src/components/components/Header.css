@@ -1,0 +1,32 @@
+/* Header.css */
+.header {
+    background-color: #000; /* Fondo negro */
+    color: #000000; /* Texto en blanco */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  
+  .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .navigation li {
+    margin: 0 20px;
+  }
+  
+  .navigation a {
+    color: #2d724a; /* Enlaces en blanco */
+    text-decoration: none;
+    font-weight: bold; /* Fuente en negrita */
+  }
+  
+  .navigation a:hover {
+    text-decoration: underline;
+  }
+  

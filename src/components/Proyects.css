@@ -1,0 +1,22 @@
+/* Projects.css */
+.projects-section {
+    padding: 40px 20px; /* Espacio alrededor de toda la sección de proyectos */
+    background-color: #f4f4f4; /* Color de fondo para la sección de proyectos */
+    color: #333; /* Color del texto para toda la sección */
+    background-image: url('/src/components/image/About.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten y envuelvan según el ancho del contenedor */
+    justify-content: center; /* Centra las tarjetas dentro del contenedor */
+    gap: 20px; /* Espacio entre las tarjetas */
+    
+}
+
+h1 {
+    text-align: center; /* Centra el título de la sección de proyectos */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
