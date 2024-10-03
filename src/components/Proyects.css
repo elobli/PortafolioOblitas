@@ -6,6 +6,8 @@
     background-image: url('/src/components/image/About.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Asegura que la sección tenga al menos la altura de la ventana */
 }
 
 .projects-container {
@@ -13,7 +15,18 @@
     flex-wrap: wrap; /* Permite que las tarjetas se ajusten y envuelvan según el ancho del contenedor */
     justify-content: center; /* Centra las tarjetas dentro del contenedor */
     gap: 20px; /* Espacio entre las tarjetas */
-    
+}
+
+.project-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas para mejorar la elevación */
+    border-radius: 10px; /* Bordes redondeados para las tarjetas */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente para mejorar la legibilidad */
+    padding: 15px; /* Espacio interno en las tarjetas */
+    transition: transform 0.3s; /* Transición suave para el efecto hover */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el ratón */
 }
 
 h1 {
