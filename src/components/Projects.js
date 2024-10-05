@@ -17,7 +17,7 @@ function Projects() {
       id: 2,
       name: "Mi Segundo Proyecto Profesional",
       description: "Este proyecto consistió en el desarrollo de un análisis inteligente aplicado a un sistema IoT para monitorear y mejorar y monitorear en tiempo real la calidad del aire.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"],
+      technologies: ["HTML", "CSS", "JavaScript", "React","NOSQL","Python"],
       link: "https://sistema-ambiental.vercel.app/",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI7ePl2OB0g9N1E4JqYsRV8_0YmfY2igJtYA&s"
     },
