@@ -1,0 +1,43 @@
+/* src/components/More.css */
+.more-section {
+  padding: 2rem;
+  background: linear-gradient(-1800deg, #2c5364, #203a43, #160f27);
+  color: #921313;
+  text-align: center;
+  
+}
+
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.more-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2398d6;
+  text-align: center;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ✅ Corrección para móviles */
+@media (max-width: 600px) {
+  .more-title {
+    padding-left: 1rem;    /* más ajustado en móvil */
+    font-size: 1.8rem;      /* opcionalmente más pequeño */
+  }
+}
+
+@media (min-width: 1024px) {
+  .more-grid {
+    max-width: 900px;
+  }
+}

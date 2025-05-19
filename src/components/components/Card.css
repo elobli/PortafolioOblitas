@@ -1,0 +1,50 @@
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 24px;
+  height: 100%;               /* importante para estirar en grid */
+  min-height: 350px;          /* igual para todas */
+  max-height: 440px;          /* evita que se estire si texto es muy largo */
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.card-text h3 {
+  font-size: 1.5rem;              /* título más grande */
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.card-text p {
+  font-size: 1.1rem;              /* subtítulo más grande */
+  font-weight: 300;
+  color: #cccccc;
+  margin-bottom: 1rem;
+}
+
+.card-image {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+

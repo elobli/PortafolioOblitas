@@ -1,32 +1,51 @@
-/* Header.css */
 .header {
-    background-color: #000; /* Fondo negro */
-    color: #000000; /* Texto en blanco */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 23px 20px;
-  }
-  
-  
-  .navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-  }
-  
-  .navigation li {
-    margin: 0 20px;
-  }
-  
-  .navigation a {
-    color: #2d724a; /* Enlaces en blanco */
-    text-decoration: none;
-    font-weight: bold; /* Fuente en negrita */
-  }
-  
-  .navigation a:hover {
-    text-decoration: underline;
-  }
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #000;
+  color: #854932;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;                    /* padding amplio al inicio */
+  transition: all 0.2s ease-in-out;      /*  transición rápida y suave */
+  box-shadow: none;
+}
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.1); /*  fondo negro con transparencia */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 12px 32px;
+  backdrop-filter: blur(6px);          /*  opcional: glass effect */
+}
+/* NAVIGATION */
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.navigation li {
+  margin: 0;
+}
+
+.navigation a {
+  color: #2d724a;               /* verde para links */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  text-decoration: underline;
+  color: #1c2349;               /* verde más claro al pasar mouse */
+}
+.header.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
   

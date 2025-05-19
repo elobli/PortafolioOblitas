@@ -1,7 +1,28 @@
-.App {
-  text-align: center;
+/* App.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #160f27, #2c5364); /* fondo global */
+  font-family: 'Montserrat', sans-serif;
 }
 
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor de la aplicación */
+.App {
+  text-align: center;
+  flex: 1; /* hace que crezca para empujar el footer hacia abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado animado (si lo usas) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,6 +34,7 @@
   }
 }
 
+/* Encabezado original de React */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,13 +43,27 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
+/* Links */
 .App-link {
   color: #61dafb;
 }
 
+/* Footer fijado abajo */
+footer {
+  margin-top: auto; /* empuja el footer al final del contenido */
+}
+
+/* General para divs de contenido */
+div {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Animación del logo */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
