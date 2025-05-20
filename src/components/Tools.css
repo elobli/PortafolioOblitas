@@ -1,0 +1,69 @@
+.tools-container {
+  display: flex;
+  padding: 60px 40px;
+  gap: 40px;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 130px;
+}
+.tools-wrapper {
+  background: linear-gradient(to bottom, #160f27, #2c5364);
+  padding: 60px 20px;
+}
+
+.tools-header {
+  flex: 1;
+  max-width: 250px;
+}
+
+.tools-header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tools-header p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+
+.tools-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  min-width: 300px;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px; /* Aumenta la separación entre tarjetas */
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: rgba(29, 20, 20, 0.08);
+}
+
+.tool-icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+.tool-image {
+  width: 60px;         /* Ajusta este valor según lo que desees */
+  height: auto;
+  object-fit: contain;
+  margin-right: 20px;  /* Espacio entre imagen y texto */
+}

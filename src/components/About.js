@@ -31,17 +31,15 @@ function About() {
       <section className="about-section">
       <div className="about-top">
         <div className="about-text">
-          <h2>¿Quién soy?</h2>
-          <p>
-            Soy Kevin, ingeniero de software apasionado por la educación y la tecnología. Me enfoco en crear
-            soluciones innovadoras y funcionales para mejorar procesos educativos y empresariales.
-          </p>
+          <h2>Who am I?</h2>
+          <p> I'm Kevin, a software engineer passionate about education and technology. I focus on creating innovative and functional solutions to improve educational, pedagogical, and business processes through software. </p>
 
-          <h2>¿Qué hago profesionalmente?</h2>
-          <p>
-            Desarrollo aplicaciones con tecnologías modernas como React, Node.js y bases de datos Oracle. Me especializo en
-            optimizar interfaces y estructuras que brinden una experiencia fluida al usuario.
-          </p>
+          <h2>What do I do professionally?</h2>
+          <p> I develop applications using modern technologies such as React, Python, PHP, C#, C++, CSS, Node.js, and databases like Oracle, MongoDB, and also SQL. I specialize in Back-End development but also work on the Front-End, aiming to stay proficient in both areas. I create both websites and desktop applications, being adaptable to any technology as well as any type of project. I enjoy learning new technologies and programming languages, as well as frameworks. </p>
+          <h2>What motivates me?</h2>
+          <p> Challenges that push me to rise to the occasion and test my existing knowledge. I enjoy all types of projects, but I always like to learn something new and to teach what I learn — whether it's in classes or sharing knowledge with friends. </p>
+          <h2>What else?</h2>
+          <p> I love keeping up with new app features and taking on more challenges to push my skills further. I really enjoy playing video games such as League of Legends, Valorant, Call of Duty, and others, as well as strategy board games. I also like watching classes or streams from other programmers. Outside the computer, I enjoy going for walks, traveling, and spending time with my pets and family. I also enjoy practicing my English. </p>
         </div>
 
         <div className="about-photo">
@@ -52,16 +50,6 @@ function About() {
 
       {/* 👇 Aquí va el carrusel de imágenes */}
       <AboutCarousel />
-
-      <section className="about-interests">
-        <h2>Aficiones e Intereses</h2>
-        <ul>
-          <li> Lectura</li>
-          <li> Desarrollo de software</li>
-          <li> Videojuegos</li>
-          <li> Música</li>
-        </ul>
-      </section>
       <More items={homeMoreItems} sectionTitle="MORE" />
     </div>
   );
