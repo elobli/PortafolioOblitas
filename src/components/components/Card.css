@@ -1,10 +1,10 @@
 .card {
   background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 24px;
+  border-radius: 39px;
+  padding: 26px;
   height: 100%;               /* importante para estirar en grid */
-  min-height: 350px;          /* igual para todas */
-  max-height: 440px;          /* evita que se estire si texto es muy largo */
+  min-height: 200px;          /* igual para todas */
+  max-height: 310px;          /* evita que se estire si texto es muy largo */
   text-align: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -48,3 +48,14 @@
   display: block;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .more-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .more-grid {
+    grid-template-columns: 1fr;
+  }
+}

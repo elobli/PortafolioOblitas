@@ -1,7 +1,7 @@
 /* src/components/More.css */
 .more-section {
   padding: 2rem;
-  background: linear-gradient(-1800deg, #2c5364, #203a43, #160f27);
+  background: transparent;
   color: #921313;
   text-align: center;
   
@@ -9,13 +9,14 @@
 
 .more-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   justify-content: center;
   align-items: start;
-  padding: 2rem 1rem;
+  margin-top: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 

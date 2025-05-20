@@ -1,57 +1,63 @@
-/* Home.css */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
 
-/* Resto de tus estilos */
-
-.home-container {
-    height: 93.2vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #e2adad;
-    background: linear-gradient(1800deg, #160f27, #203a43, #2c5364);;
-    background-size: cover;
-    background-position: center;
-    margin-top: 70px; /* Ajusta según el tamaño de tu header */
-  }
-  
- body {
+body {
   font-family: 'Montserrat', sans-serif;
- } 
-
- .profile-image {
-  width: 300px; /* Ajusta el tamaño según necesites */
-  height: 300px;
-  border-radius: 50%; /* Crea una imagen circular */
-  margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+  margin: 0;
+  padding: 0;
 }
 
+/* Fondo compartido */
+.home-wrapper {
+  background: linear-gradient(to bottom, #160f27, #2c5364);
+  color: #e2adad;
+}
 
-  h1 {
-    font-size: 3rem; /* Ajusta el tamaño de la fuente según necesites */
-    margin-bottom: 0.5rem;
+/* Sección principal */
+.home-container {
+  padding: 80px 20px 60px 20px;
+  text-align: center;
+}
+
+.profile-image {
+  width: 270px;
+  height: 270px;
+  border-radius: 40%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+.home-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #f8bcbc;
+}
+
+.home-container p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  max-width: 900px;
+  margin: 0 auto 10px auto;
+  line-height: 1.6;
+  color: #f3d1d1;
+}
+
+/* Contenedor del More */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-image {
+    width: 200px;
+    height: 200px;
   }
-  
-  p {
-    font-size: 1.5rem;
-    font-weight: 300;
+
+  .home-container h1 {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 768px) {
-    .profile-image {
-      width: 250px;
-      height: 250px;
-    }
-  
-    h1 {
-      font-size: 2rem;
-    }
-  
-    p {
-      font-size: 1rem;
-    }
+
+  .home-container p {
+    font-size: 1rem;
   }
-  
-  
+}
