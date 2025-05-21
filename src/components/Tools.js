@@ -31,7 +31,7 @@ const ToolsMoreItems = [
 const tools = [
   {
     name: "Visual Studio Code",
-    description: "Editor de código ligero y muy extensible.",
+    description: "Editor de código ligero y muy extensible para realizar codigo gratificantemente si si sssssssssssssssssssssssssssssssssssssssssssssssssssssssss.",
     icon: "https://cdn-icons-png.flaticon.com/512/906/906324.png",
     link: "https://code.visualstudio.com/"
   },
