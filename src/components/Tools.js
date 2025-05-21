@@ -31,79 +31,79 @@ const ToolsMoreItems = [
 const tools = [
   {
     name: "Visual Studio Code",
-    description: "Editor de código ligero y muy extensible para realizar codigo gratificantemente si si sssssssssssssssssssssssssssssssssssssssssssssssssssssssss.",
+    description: "this is a lightweight, fast, and highly customizable editor. With a wide range of extensions, it supports multiple languages and UI design, making it a great choice for developers and designers alike.",
     icon: "https://cdn-icons-png.flaticon.com/512/906/906324.png",
     link: "https://code.visualstudio.com/"
   },
   {
     name: "Figma",
-    description: "Diseño UI/UX colaborativo en la nube.",
+    description: "Figma is a powerful, intuitive, and real-time collaborative design tool, ideal for teams seeking efficiency and smooth communication in creating interfaces and prototypes, all stored in the cloud.",
     icon: "https://cdn-icons-png.flaticon.com/512/5968/5968705.png",
     link: "https://figma.com"
   },
   {
     name: "GitHub",
-    description: "Control de versiones y repositorios remotos.",
+    description: "is a powerful platform for version control and collaboration. It makes it easy to manage code, track changes, and work with teams, becoming essential for modern software development.",
     icon: "https://cdn-icons-png.flaticon.com/512/733/733553.png",
     link: "https://github.com"
   },
   {
   name: "Notion",
-  description: "Organizador de tareas, notas y bases de datos todo en uno.",
+  description: " is a versatile and intuitive productivity tool. It combines notes, tasks, databases, and collaboration features in one place, making it ideal for organizing both personal and team projects.",
   icon: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg",
   link: "https://www.notion.so/"
 },
 {
   name: "Vercel",
-  description: "Plataforma para desplegar aplicaciones web JAMstack.",
+  description: "is a fast and developer-friendly platform for deploying web applications. It offers seamless integration with modern frameworks, automatic deployments, and a great developer experience focused on speed and simplicity.",
   icon: vercel,
   link: "https://vercel.com/"
 },
 {
   name: "Auth0",
-  description: "Autenticación y autorización para aplicaciones modernas.",
+  description: "is a flexible and secure authentication platform. It simplifies user login, authorization, and identity management, making it easy to integrate robust security features into any application.",
   icon: auth,
   link: "https://auth0.com/"
 },
 {
   name: "Canva",
-  description: "Diseño gráfico para todos con facilidad.",
+  description: "is a user-friendly graphic design platform. It offers a wide range of templates and tools, making it easy for anyone to create professional-quality visuals, from social media posts to presentations.",
   icon: canva,
   link: "https://www.canva.com/"
 },
 {
   name: "ChatGPT",
-  description: "Modelo de lenguaje conversacional inteligente.",
+  description: "is an AI language model designed to assist with a wide range of tasks. It can answer questions, generate content, help with coding, and support creative or professional projects through natural, conversational interaction.",
   icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
   link: "https://chat.openai.com/"
 },
 {
   name: "GitHub Copilot",
-  description: "Asistente de codificación basado en IA.",
+  description: "is an AI-powered coding assistant. It helps developers write code faster by suggesting lines or entire functions in real time, improving productivity and reducing repetitive tasks.",
   icon: copilot,
   link: "https://github.com/features/copilot"
 },
 {
   name: "Netlify",
-  description: "Despliegue rápido de sitios y apps JAMstack.",
+  description: "is a powerful platform for deploying and hosting modern web applications. It offers continuous deployment, serverless functions, and an intuitive workflow, making it ideal for developers looking for speed and simplicity in web development.",
   icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
   link: "https://www.netlify.com/"
 },
 {
   name: "Firebase",
-  description: "Plataforma para desarrollar apps con backend.",
+  description: "is a comprehensive app development platform by Google. It offers tools like real-time databases, authentication, hosting, and analytics, making it easy to build and scale modern web and mobile apps.",
   icon: firebase,
   link: "https://firebase.google.com/"
 },
 {
   name: "Postman",
-  description: "Plataforma para pruebas de APIs.",
+  description: " is a powerful API platform used for building, testing, and documenting APIs. It streamlines the development process with a user-friendly interface and collaboration features for teams.",
   icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
   link: "https://www.postman.com/"
 },
 {
   name: "Supabase",
-  description: "Alternativa open-source a Firebase.",
+  description: "is an open-source backend-as-a-service. It provides a PostgreSQL database, authentication, storage, and real-time capabilities, making it a great alternative to Firebase for building modern apps.",
   icon: supabase,
   link: "https://supabase.com/"
 }
