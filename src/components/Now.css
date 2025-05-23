@@ -1,0 +1,53 @@
+.now-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 60px 20px;
+  color: white;
+  background: linear-gradient(to bottom, #160f27, #2c5364);
+}
+
+.now-sidebar {
+  flex: 1;
+  max-width: 300px;
+}
+
+.now-sidebar h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.now-sidebar h4 {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+
+.now-sidebar p, .now-sidebar a {
+  font-size: 1rem;
+  color: #dddddd;
+}
+
+.now-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.now-entry h3 {
+  font-size: 1.6rem;
+  color: #45e0d0;
+}
+
+.now-entry p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #eeeeee;
+}
+
+.now-entry img {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
