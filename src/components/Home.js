@@ -3,13 +3,15 @@ import React from 'react';
 import profileImage from './image/Foto.jpeg';
 import More from './components/More';
 import './Home.css';
+import about from './image/About_mi.png';
+import tools from './image/tools.png';
 
 function Home() {
   const homeMoreItems = [
     {
       title: "ABOUT MY",
       subtitle: "Personality & Experience",
-      image: profileImage,
+      image: about,
       href: "/about"
     },
     {
@@ -21,7 +23,7 @@ function Home() {
     {
       title: "TOOLS",
       subtitle: "Software I use and recommend",
-      image: profileImage,
+      image: tools,
       href: "/tools"
     }
   ];

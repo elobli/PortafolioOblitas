@@ -7,12 +7,14 @@ import canva from './image/Canva-Logo-PNG-Picture.png';
 import auth from './image/auth0-seeklogo.svg';
 import vercel from './image/vercel-seeklogo.svg';
 import profileImage from './image/Foto.jpeg';
+import about from './image/About_mi.png';
+import tool from './image/tools.png';
 import MORE from './components/More';
 const ToolsMoreItems = [
     {
       title: "ABOUT MY",
       subtitle: "Personality & Experience",
-      image: profileImage,
+      image: about,
       href: "/about"
     },
     {

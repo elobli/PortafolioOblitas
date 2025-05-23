@@ -3,6 +3,8 @@ import './About.css'; // Tu CSS general del About
 import AboutCarousel from './AboutCarousel'; // 👈 Importamos el carrusel
 import profileImage from './image/Foto.jpeg';
 import More from './components/More';
+import about from './image/About_mi.png';
+import tools from './image/tools.png';
 
 function About() {
   const homeMoreItems = [
@@ -21,7 +23,7 @@ function About() {
     {
       title: "TOOLS",
       subtitle: "Software I use and recommend",
-      image: profileImage,
+      image: tools,
       href: "/tools"
     }
   ];
