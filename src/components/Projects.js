@@ -42,10 +42,10 @@ function Projects() {
 
   return (
     <div className="projects-section">
-      <h1>Proyectos Realizados</h1>
+       <h1 className="projects-title">Proyectos Realizados</h1>
       <div className="projects-container">
         {projects.map(project => (
-          <ProjectCard key={project.id} project={project} />
+         <ProjectCard key={project.id} project={project} />
         ))}
       </div>
     </div>
