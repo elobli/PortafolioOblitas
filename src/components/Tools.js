@@ -25,7 +25,7 @@ const ToolsMoreItems = [
     },
     {
       title: "HOME PAGE",
-      subtitle: "Software I use and recommend",
+      subtitle: "Principal page",
       image: profileImage,
       href: "/tools"
     }

@@ -10,7 +10,7 @@ function About() {
   const homeMoreItems = [
     {
       title: "HOME PAGE",
-      subtitle: "My personal website",
+      subtitle: "Principal page",
       image: profileImage,
       href: "/"
     },

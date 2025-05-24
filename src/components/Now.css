@@ -1,53 +1,79 @@
+/* Fondo general para toda la página Now */
+.page-now-wrapper {
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 40px 20px;
+}
+
+/* Contenedor principal */
 .now-container {
   display: flex;
   flex-direction: row;
-  gap: 40px;
-  padding: 60px 20px;
-  color: white;
-  background: linear-gradient(to bottom, #160f27, #2c5364);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
+/* Barra lateral */
 .now-sidebar {
   flex: 1;
   max-width: 300px;
+  text-align: center;
 }
 
 .now-sidebar h2 {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.now-sidebar h4 {
-  font-size: 1.2rem;
-  color: #cccccc;
+.now-sidebar h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
 }
 
-.now-sidebar p, .now-sidebar a {
+.now-sidebar p {
   font-size: 1rem;
-  color: #dddddd;
+  line-height: 1.6;
 }
 
-.now-content {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+/* Eventos */
+.now-events {
+  flex: 2;
+  max-width: 800px;
+  padding-right: 10px;
 }
 
-.now-entry h3 {
-  font-size: 1.6rem;
-  color: #45e0d0;
+.evento {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.now-entry p {
+.evento h4 {
+  font-size: 1.3rem;
+  color: #4cb8c4;
+  margin-bottom: 10px;
+}
+
+.evento p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #eeeeee;
+  margin-bottom: 10px;
 }
 
-.now-entry img {
-  width: 100%;
-  max-width: 600px;
-  margin-top: 15px;
+.evento img {
+  max-width: 90%;
+  height: auto;
   border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* Sección MORE debajo de los eventos */
+.page-now-wrapper > .more-section {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
 }

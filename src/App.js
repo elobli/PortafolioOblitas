@@ -7,7 +7,7 @@ import Header from './components/components/Header';
 import Footer from './components/components/Footer';
 import './App.css';
 import Tools from './components/Tools';
-import Now from './components/Now';
+import Now from './components/Nowpage';
 
 function App() {
   return (

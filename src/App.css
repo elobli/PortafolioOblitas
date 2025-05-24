@@ -3,10 +3,15 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: linear-gradient(to bottom, #160f27, #2c5364); /* fondo global */
   font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #160f27, #2c5364);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
 
 #root {
   min-height: 100vh;
