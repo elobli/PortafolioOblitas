@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Now.css';
-import defensaPublica from './image/About.jpg'; // solo si tienes una imagen
+import defensaPublica from './image/About.jpg';
 import profileImage from './image/Foto.jpeg';
 import More from './components/More';
-import './Home.css';
 import about from './image/About_mi.png';
-import tools from './image/tools.png'
+import tools from './image/tools.png';
+
 const eventos = [
   {
     fecha: 'Abril 4, 2025',
@@ -61,7 +61,7 @@ const eventos = [
 function Now() {
   const homeMoreItems = [
     {
-      title: "ABOUT MY",
+      title: "ABOUT ME",
       subtitle: "Personality & Experience",
       image: about,
       href: "/about"
@@ -70,7 +70,7 @@ function Now() {
       title: "HOME PAGE",
       subtitle: "Principal page",
       image: profileImage,
-      href: "/now"
+      href: "/"
     },
     {
       title: "TOOLS",
@@ -79,32 +79,79 @@ function Now() {
       href: "/tools"
     }
   ];
-  return (
-    <div className="page-now-wrapper"> {/* <- Fondo general aquí */}
-      <div className="now-container">
-        <aside className="now-sidebar">
-          <h2>NOW PAGE</h2>
-          <h3>¿Qué estoy haciendo últimamente?</h3>
-          <p>
-            Este es un resumen cronológico de mis actividades profesionales, académicas y proyectos más recientes.
-          </p>
-        </aside>
 
-        <div className="now-events">
-          {eventos.map((evento, index) => (
-            <div key={index} className="evento">
-              <h4>{evento.fecha}</h4>
-              <p>{evento.descripcion}</p>
-              {evento.imagen && <img src={evento.imagen} alt="Evento relacionado" />}
-            </div>
+  const timelineRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    if (timelineRef.current) {
+      const events = timelineRef.current.querySelectorAll('.timeline-event');
+      events.forEach(event => observer.observe(event));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="now-wrapper">
+      <div className="animated-background">
+        <div className="floating-particles">
+          {[...Array(15)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${15 + Math.random() * 10}s`,
+              width: `${5 + Math.random() * 10}px`,
+              height: `${5 + Math.random() * 10}px`
+            }}></div>
           ))}
         </div>
-        
       </div>
-      <div className="more-section">
-          <More items={homeMoreItems} sectionTitle="MORE" />
+      
+      <div className="now-container">
+        <div className="now-header">
+          <h1 className="now-title">My Journey</h1>
+          <p className="now-subtitle">
+            A chronological timeline of my professional and academic experiences
+          </p>
+        </div>
+
+        <div className="timeline" ref={timelineRef}>
+          {eventos.map((evento, index) => (
+            <div 
+              key={index} 
+              className={`timeline-event ${index % 2 === 0 ? 'left' : 'right'}`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="event-content">
+                <div className="event-date">{evento.fecha}</div>
+                <div className="event-description">
+                  <p>{evento.descripcion}</p>
+                </div>
+                {evento.imagen && (
+                  <div className="event-image">
+                    <img src={evento.imagen} alt="Event related" />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+          <div className="timeline-line"></div>
+        </div>
+      </div>
+      
+      <div className="now-more-section">
+        <More items={homeMoreItems} sectionTitle="EXPLORE MORE" />
       </div>
     </div>
   );
 }
+
 export default Now;

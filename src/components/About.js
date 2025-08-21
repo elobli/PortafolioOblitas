@@ -1,6 +1,6 @@
-import React from 'react';
-import './About.css'; // Tu CSS general del About
-import AboutCarousel from './AboutCarousel'; // 👈 Importamos el carrusel
+import React, { useEffect, useRef, useState } from 'react';
+import './About.css';
+import AboutCarousel from './AboutCarousel';
 import profileImage from './image/Foto.jpeg';
 import More from './components/More';
 import about from './image/About_mi.png';
@@ -28,31 +28,79 @@ function About() {
     }
   ];
 
+  const textRef = useRef(null);
+  const photoRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Simular carga y luego mostrar animaciones
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="about-container">
-      <section className="about-section">
-      <div className="about-top">
-        <div className="about-text">
-          <h2>Who am I?</h2>
-          <p> I'm Kevin, a software engineer passionate about education and technology. I focus on creating innovative and functional solutions to improve educational, pedagogical, and business processes through software. </p>
-
-          <h2>What do I do professionally?</h2>
-          <p> I develop applications using modern technologies such as React, Python, PHP, C#, C++, CSS, Node.js, and databases like Oracle, MongoDB, and also SQL. I specialize in Back-End development but also work on the Front-End, aiming to stay proficient in both areas. I create both websites and desktop applications, being adaptable to any technology as well as any type of project. I enjoy learning new technologies and programming languages, as well as frameworks. </p>
-          <h2>What motivates me?</h2>
-          <p> Challenges that push me to rise to the occasion and test my existing knowledge. I enjoy all types of projects, but I always like to learn something new and to teach what I learn — whether it's in classes or sharing knowledge with friends. </p>
-          <h2>What else?</h2>
-          <p> I love keeping up with new app features and taking on more challenges to push my skills further. I really enjoy playing video games such as League of Legends, Valorant, Call of Duty, and others, as well as strategy board games. I also like watching classes or streams from other programmers. Outside the computer, I enjoy going for walks, traveling, and spending time with my pets and family. I also enjoy practicing my English. </p>
-        </div>
-
-        <div className="about-photo">
-          <img src={profileImage} alt="Kevin Oblitas" />
+    <div className="about-wrapper">
+      <div className="animated-background">
+        <div className="floating-particles">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${8 + Math.random() * 7}s`,
+              width: `${8 + Math.random() * 15}px`,
+              height: `${8 + Math.random() * 15}px`
+            }}></div>
+          ))}
         </div>
       </div>
-    </section>
+      
+      <div className="about-container">
+        <section className="about-section">
+          <div className="about-top">
+            <div className={`about-text ${isVisible ? 'animate-in' : ''}`} ref={textRef}>
+              <h2 className="text-reveal">Who am I?</h2>
+              <p className="fade-in">I'm Kevin, a software engineer passionate about education and technology. I focus on creating innovative and functional solutions to improve educational, pedagogical, and business processes through software.</p>
 
-      {/* 👇 Aquí va el carrusel de imágenes */}
-      <AboutCarousel />
-      <More items={homeMoreItems} sectionTitle="MORE" />
+              <h2 className="text-reveal">What do I do professionally?</h2>
+              <p className="fade-in">I develop applications using modern technologies such as React, Python, PHP, C#, C++, CSS, Node.js, and databases like Oracle, MongoDB, and also SQL. I specialize in Back-End development but also work on the Front-End, aiming to stay proficient in both areas.</p>
+              
+              <h2 className="text-reveal">What motivates me?</h2>
+              <p className="fade-in">Challenges that push me to rise to the occasion and test my existing knowledge. I enjoy all types of projects, but I always like to learn something new and to teach what I learn.</p>
+              
+              <h2 className="text-reveal">What else?</h2>
+              <p className="fade-in">I love keeping up with new app features and taking on more challenges to push my skills further. I really enjoy playing video games and strategy board games.</p>
+            </div>
+
+            <div className={`about-photo ${isVisible ? 'animate-in' : ''}`} ref={photoRef}>
+              <div className="photo-container">
+                <div className="photo-frame">
+                  <div className="frame-decoration frame-1"></div>
+                  <div className="frame-decoration frame-2"></div>
+                  <div className="frame-decoration frame-3"></div>
+                  <img src={profileImage} alt="Kevin Oblitas" className="profile-img" />
+                </div>
+                <div className="floating-elements">
+                  <div className="floating-element element-1">⚡</div>
+                  <div className="floating-element element-2">🚀</div>
+                  <div className="floating-element element-3">💻</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Carrusel */}
+        <div className={`carousel-container ${isVisible ? 'animate-in' : ''}`}>
+          <AboutCarousel />
+        </div>
+      </div>
+      
+      <div className={`about-more-section ${isVisible ? 'animate-in' : ''}`}>
+        <More items={homeMoreItems} sectionTitle="EXPLORE MORE" />
+      </div>
     </div>
   );
 }

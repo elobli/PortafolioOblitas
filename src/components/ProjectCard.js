@@ -1,9 +1,10 @@
+// src/components/ProjectCard.js (actualizado)
 import React from 'react';
 import './ProjectCard.css';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, style }) {
   return (
-    <div className="project-card">
+    <div className="project-card" style={style}>
       <img src={project.image} alt={project.name} className="project-image" />
       <div className="project-info">
         <h3>{project.name}</h3>
@@ -13,15 +14,19 @@ function ProjectCard({ project }) {
             <li key={index}>{tech}</li>
           ))}
         </ul>
-        {project.link && (
+        {project.link ? (
           <a
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             className="btn"
           >
-            Ver Más
+            View Project
           </a>
+        ) : (
+          <button className="btn" disabled>
+            Coming Soon
+          </button>
         )}
       </div>
     </div>
@@ -29,4 +34,3 @@ function ProjectCard({ project }) {
 }
 
 export default ProjectCard;
-

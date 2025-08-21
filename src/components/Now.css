@@ -1,79 +1,303 @@
-/* Fondo general para toda la página Now */
-.page-now-wrapper {
-  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+/* Now.css - Versión Completa Corregida */
+.now-wrapper {
+  background: linear-gradient(-45deg, #160f27, #1a1a40, #2c5364, #0f3460);
+  background-size: 400% 400%;
+  color: #ffffff;
+  position: relative;
+  animation: gradientShift 15s ease infinite;
   min-height: 100vh;
-  overflow-x: hidden;
-  padding: 40px 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Contenedor principal */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-particles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  animation: float 20s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-100px) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+    opacity: 0.6;
+  }
+}
+
 .now-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-/* Barra lateral */
-.now-sidebar {
+  padding: 100px 20px 40px;
+  position: relative;
+  z-index: 2;
   flex: 1;
-  max-width: 300px;
+}
+
+.now-header {
   text-align: center;
+  margin-bottom: 80px;
 }
 
-.now-sidebar h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.now-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.now-sidebar h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+.now-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #e6e6e6;
+  line-height: 1.6;
 }
 
-.now-sidebar p {
+/* Timeline styles - CORREGIDO */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0 20px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #ff6b6b, #4ecdc4);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  width: 45%;
+  z-index: 2;
+}
+
+.timeline-event.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-event.left {
+  left: 0;
+}
+
+.timeline-event.right {
+  left: 55%;
+}
+
+.event-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.event-content:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.event-date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4ecdc4;
+  margin-bottom: 15px;
+}
+
+.event-description p {
   font-size: 1rem;
   line-height: 1.6;
+  color: #e6e6e6;
+  margin-bottom: 15px;
 }
 
-/* Eventos */
-.now-events {
-  flex: 2;
-  max-width: 800px;
-  padding-right: 10px;
-}
-
-.evento {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.evento h4 {
-  font-size: 1.3rem;
-  color: #4cb8c4;
-  margin-bottom: 10px;
-}
-
-.evento p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.evento img {
-  max-width: 90%;
-  height: auto;
-  border-radius: 10px;
+.event-image {
   margin-top: 15px;
 }
 
-/* Sección MORE debajo de los eventos */
-.page-now-wrapper > .more-section {
-  margin-top: 0px;
-  display: flex;
-  justify-content: center;
+.event-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.event-content:hover .event-image img {
+  transform: scale(1.02);
+}
+
+/* Puntos de conexión en la línea central - SOLO UN PUNTO */
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.15);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.timeline-event.left::before {
+  right: -60px;
+}
+
+.timeline-event.right::before {
+  left: -60px;
+}
+
+/* Conectores entre el punto y la tarjeta */
+.timeline-event::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #4ecdc4, #ff6b6b);
+  z-index: 2;
+}
+
+.timeline-event.left::after {
+  right: -40px;
+  background: linear-gradient(to right, #4ecdc4, #ff6b6b);
+}
+
+.timeline-event.right::after {
+  left: -40px;
+  background: linear-gradient(to left, #4ecdc4, #ff6b6b);
+}
+
+/* Efecto hover en los puntos */
+.timeline-event:hover::before {
+  transform: translateY(-50%) scale(1.2);
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 107, 107, 0.6);
+}
+
+.now-more-section {
+  position: relative;
+  z-index: 2;
+  padding: 20px 20px 40px;
+  margin-top: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 968px) {
+  .timeline-event {
+    width: 85%;
+    left: 7.5% !important;
+    margin-left: 0 !important;
+  }
+  
+  .timeline-line {
+    left: 30px;
+  }
+  
+  .timeline-event::before {
+    left: -40px !important;
+    right: auto !important;
+  }
+  
+  .timeline-event::after {
+    display: none;
+  }
+  
+  .now-container {
+    padding: 80px 15px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .now-title {
+    font-size: 2.5rem;
+  }
+  
+  .now-subtitle {
+    font-size: 1rem;
+  }
+  
+  .event-content {
+    padding: 20px;
+  }
+  
+  .event-date {
+    font-size: 1rem;
+  }
+  
+  .event-description p {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-event {
+    margin-bottom: 40px;
+    width: 90%;
+    left: 5% !important;
+  }
+  
+  .timeline-event::before {
+    left: -30px !important;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .now-more-section {
+    padding: 20px 15px 30px;
+  }
+  
+  .timeline-line {
+    left: 20px;
+    width: 3px;
+  }
 }
