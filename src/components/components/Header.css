@@ -1,51 +1,243 @@
+/* Header.css */
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #000;
-  color: #854932;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.92);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 32px;                    /* padding amplio al inicio */
-  transition: all 0.2s ease-in-out;      /*  transición rápida y suave */
-  box-shadow: none;
 }
-.header.scrolled {
-  background-color: rgba(0, 0, 0, 0.1); /*  fondo negro con transparencia */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  padding: 12px 32px;
-  backdrop-filter: blur(6px);          /*  opcional: glass effect */
-}
-/* NAVIGATION */
 
+/* Logo styles */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-text {
+  color: #2d724a;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.logo-dot {
+  width: 8px;
+  height: 8px;
+  background: #854932;
+  border-radius: 50%;
+  margin-left: 4px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.logo-link:hover .logo-text {
+  color: #3a8c5d;
+  transform: translateY(-2px);
+}
+
+/* Navigation styles */
 .navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
 .navigation li {
   margin: 0;
+  position: relative;
 }
 
-.navigation a {
-  color: #2d724a;               /* verde para links */
+.nav-link {
+  color: #f0f0f0;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  overflow: hidden;
   transition: color 0.3s ease;
 }
 
-.navigation a:hover {
-  text-decoration: underline;
-  color: #1c2349;               /* verde más claro al pasar mouse */
-}
-.header.scrolled {
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+.link-text {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
+.link-text::before {
+  content: attr(data-hover);
+  position: absolute;
+  top: 100%;
+  color: #854932;
+  transform: translate3d(0, 0, 0);
+}
+
+.nav-link:hover .link-text {
+  transform: translateY(-100%);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #2d724a, #854932);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: translateX(0);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 3px;
+  background: #2d724a;
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: center;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
   
+  .header.scrolled {
+    padding: 0.5rem 1rem;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.4s ease-in-out;
+  }
+  
+  .navigation.nav-open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  
+  .navigation ul {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animation for header on page load */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.header {
+  animation: slideDown 0.5s ease forwards;
+}
+
+/* Optional: Add a subtle gradient background animation */
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(45, 114, 74, 0.1), rgba(133, 73, 50, 0.1));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.header.scrolled::before {
+  opacity: 1;
+}
